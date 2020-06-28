@@ -1,0 +1,26 @@
+<div class="aa-header-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="aa-header-top-area">
+            <!-- start header top left -->
+            <div class="aa-header-top-left">
+              <!-- start cellphone -->
+              <div class="cellphone hidden-xs">
+                <p><span class="fa fa-phone"></span>00-62-658-658</p>
+              </div>
+              <!-- / cellphone -->
+            </div>
+            <!-- / header top left -->
+            <div class="aa-header-top-right">
+              <ul class="aa-head-top-nav-right">
+                <li *ngFor="let option of headerTopOptions" class="{{option.class}}">
+                    <a href="{{option.href}}">{{option.label}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
