@@ -1,17 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderBottomComponent } from './shared/components/header-bottom/header-bottom.component';
+import { APP_ROUTES } from './app-routing.module';
+import { LayoutModule } from './pages/layout/layout.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    APP_ROUTES,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
