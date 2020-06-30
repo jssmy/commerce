@@ -1,58 +1,21 @@
 import { Injectable } from '@angular/core';
 import { IproductItem } from '../interfaces/iproduct-item';
-
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { map, } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
   
-  get(): IproductItem[] {
-    const products: IproductItem[] = [
-      {
-        id: '32343434',
-        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
-        price: 12,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-1.png'
-      },
-      {
-        id: '323434232334',
-        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
-        price: 12,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-2.png'
-      },
-      {
-        id: '32343234234434',
-        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
-        price: 12,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-4.png'
-      },
-      {
-        id: '32343242343434',
-        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
-        price: 12,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-13.png'
-      },
-      {
-        id: '3234323423434',
-        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
-        price: 12,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-2.png'
-      },
-      {
-        id: '32342344233434',
-        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
-        price: 12,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-5.png'
-      }
-    ];
-    return products;
+  get(): Observable<IproductItem[]>{
+    console.log('--------');
+    return this.http.get(environment.URL_PRODUCT_SERVICE).pipe(map(response => {
+      console.log(response);
+      return [];
+    }));
   }
 }
