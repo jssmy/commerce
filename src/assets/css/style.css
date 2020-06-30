@@ -1,47 +1,60 @@
-/*
-  Template Name: Daily Shop
-  Author : MarkUps
-  Author URI: http://www.markups.io/
-  Version: 1.0
-  Tags: light, white, ecommerce, online store, multi page, custom-colors, Bootstrap,responsive, html5, css3, Sass, template, web template
 
-*/
-
-/* Table of Content
-==================================================
-#BASIC TYPOGRAPHY
-#HEADER SECTION
-#NAVBAR SECTION
-#SLIDER SECTION
-#PROMO SECTION
-#PRODUCT SECTION
-#BANNER SECTION
-#POPULAR SECTION
-#SUPPORT SECTION
-#TESTIMONIAL SECTION
-#LATEST BLOG SECTION
-#CLIENT BRAND SECTION
-#PRODUCT PAGE
-#PRODUCT DETAILS PAGE
-#CART VIEW PAGE
-#CHECKOUT PAGE
-#MY ACCOUNT  PAGE
-#BLOG ARCHIVE  PAGE
-#BLOG DETAILS  PAGE
-#CONTACT  PAGE
-#ERROR  PAGE
-#FOOTER SECTION
-#RESPONSIVE DESIGN
-
-*/
-
-/* BASE - Base tyles, Variables, Mixins, etc. */
 body {
   background-color: #ffffff;
   font-family: "Lato", sans-serif;
   color: #333333;
   font-size: 16px;
   overflow-x: hidden;
+}
+.main-content {
+  background-color: #f4f4f4;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+.aa-product-detail {
+  height: 70%;
+}
+
+.aa-customer-ifo a{
+  font-size: 12px;
+}
+
+.aa-product-info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: start;
+  height: 35%;
+}
+.card-icon {
+  border: solid 1px #927d7d;
+  border-radius: 50%;
+  padding: 5px;
+  padding-left: 4px;
+  padding-bottom: 3px;
+  color: #927d7d;
+  background-color: #fff; 
+  cursor: pointer;
+}
+
+.card-icon:hover {
+  color: #cca8a8;
+}
+
+.aa-product {
+  padding: 10px;
+  position: relative;
+  height: 65%;
+}
+.aa-product .card-options{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .no-padding {
@@ -1102,6 +1115,15 @@ img {
 .aa-product-catg {
   margin-left: -54px;
 }
+
+.aa-product-catg li:hover {
+  box-shadow: 6px 3px 20px -2px rgba(0, 0, 0, 0.17)
+}
+.aa-product-catg li::after {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+
+}
 .aa-product-catg li {
   display: block;
   float: left;
@@ -1111,10 +1133,26 @@ img {
   width: 20.5%;
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: solid 1px #eee;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+
+  /*
+  box-shadow: 6px 3px 20px -2px rgba(0, 0, 0, 0.17)
+  */
 }
+.aa-product-catg li figure .aa-product-img img {
+  max-width: 80%;
+}
+/*
 .aa-product-catg li:hover figure .aa-product-img {
   background-color: rgba(0, 0, 0, 0.5);
 }
+*/
+/*
 .aa-product-catg li:hover figure .aa-add-card-btn {
   -moz-transform: scale(1);
   -o-transform: scale(1);
@@ -1129,18 +1167,20 @@ img {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
 }
+*/
 .aa-product-catg li figure {
   position: relative;
-  height: 300px;
+  height: 100%;
+  /*height: 300px;*/
 }
 .aa-product-catg li figure .aa-product-img {
-  background-color: #f9f9fb;
   display: block;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  /*#f9f9fb*/
 }
 .aa-product-catg li figure .aa-add-card-btn {
   background: #000 none repeat scroll 0 0;
@@ -1172,6 +1212,8 @@ img {
   margin-bottom: 5px;
 }
 .aa-product-catg li .aa-product-title a {
+  font-size: 14px;
+  font-weight: 600;
   color: #333;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -1183,6 +1225,7 @@ img {
   font-weight: bold;
   letter-spacing: 0.5px;
   font-size: 16px;
+  color: #ea2840;
 }
 .aa-product-catg li .aa-product-price del {
   margin-left: 5px;

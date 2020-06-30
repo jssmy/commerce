@@ -1,19 +1,20 @@
 <figure>
-    <a  class="aa-product-img" href="#"> <img    src="{{product.url_img}}" alt="website template image"> </a>
-    <a class="aa-add-card-btn"href="#"> <span class="fa fa-shopping-cart"></span>Agregar al carro </a>
-    <figcaption>
-        <h4 class="aa-product-title"><a href="#">{{product.name}}</a></h4>
-        <span class="aa-product-price">S/ {{product.price}}</span>
+    <div class="aa-product">
+        <div  class="aa-product-img">
+            <img    src="{{product.url_img}}" alt="website template image">
+        </div>
+        <div class="card-options">
+            <i class="fa fa-heart card-icon" aria-hidden="true"></i>
+            <i class="fa fa-cart-plus card-icon" aria-hidden="true"></i>
+        </div>
+    </div>
+    <figcaption class="aa-product-info">
+        <div class="aa-product-detail">
+            <h4 class="aa-product-title"><a href="#">{{product.name}}</a></h4>
+        <span class="aa-product-price">S/{{product.price}}</span>
+        </div>
+        <div class="aa-customer-ifo pull-left">
+            <a href="#">Comercial Gamarra</a>
+        </div>
     </figcaption>
 </figure>
-<div class="aa-product-hvr-content">
-    <a  href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to Wishlist">
-        <span class="fa fa-heart-o"></span>
-    </a>
-    <a  href="#" data-toggle="tooltip" data-placement="top" title="" data-original-title="Compare">
-        <span class="fa fa-exchange"></span>
-    </a>
-    <a  href="#" data-toggle2="tooltip" data-placement="top" title="" data-toggle="modal" data-target="#quick-view-modal" data-original-title="Quick View">
-        <span class="fa fa-search"></span>
-    </a>
-</div>

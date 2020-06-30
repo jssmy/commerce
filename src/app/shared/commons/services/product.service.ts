@@ -12,42 +12,42 @@ export class ProductService {
     const products: IproductItem[] = [
       {
         id: '32343434',
-        name: 'Camisas',
+        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
         price: 12,
         price_before: 0,
         url_img: 'assets/img/man/polo-shirt-1.png'
       },
       {
         id: '323434232334',
-        name: 'Camisas',
+        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
         price: 12,
         price_before: 0,
         url_img: 'assets/img/man/polo-shirt-2.png'
       },
       {
         id: '32343234234434',
-        name: 'Camisas',
+        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
         price: 12,
         price_before: 0,
         url_img: 'assets/img/man/polo-shirt-4.png'
       },
       {
         id: '32343242343434',
-        name: 'Camisas',
+        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
         price: 12,
         price_before: 0,
         url_img: 'assets/img/man/polo-shirt-13.png'
       },
       {
         id: '3234323423434',
-        name: 'Camisas',
+        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
         price: 12,
         price_before: 0,
         url_img: 'assets/img/man/polo-shirt-2.png'
       },
       {
         id: '32342344233434',
-        name: 'Camisas',
+        name: '2020 new design LED PC Monitor 27 Inch FHD 144HZ',
         price: 12,
         price_before: 0,
         url_img: 'assets/img/man/polo-shirt-5.png'
