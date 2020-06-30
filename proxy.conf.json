@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+      "target": "https://fir-api-92d68.web.app",
+      "secure": false,
+      "changeOrigin": true
+  }
+}
