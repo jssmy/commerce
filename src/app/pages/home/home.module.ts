@@ -18,3 +18,4 @@ import { BannerModule } from 'src/app/shared/components/banner/banner.module';
   ], exports: [ HomeComponent ]
 })
 export class HomeModule { }
+  

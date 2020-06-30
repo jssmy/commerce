@@ -10,7 +10,7 @@
  * @license http://sequencejs.com/licenses/
  * @copyright Ian Lunn Design Limited 2015
  */
-
+  
 function defineSequence(imagesLoaded, Hammer) {
 
   'use strict';
