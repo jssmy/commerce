@@ -1,8 +1,27 @@
-<div class="carrousel">
-    <ul class="sld" [style.width]="sliderc" [style.animation]="animation">
-        <li *ngFor="let img of imag" [style.width]="sliderl">
-
-            <div class="slider" [style.background-image]="img"></div>
-        </li>
-    </ul>
-</div>
+<section id="aa-slider">
+    <div class="aa-slider-area">
+      <div id="sequence" class="seq seq-no-touch seq-active seq-step3" data-seq-enabled="0">
+        <div class="seq-screen" style="height: 100%; width: 100%;">
+          <ul class="seq-canvas">
+            <li *ngFor="let content of sliderContent" class="{{content.state}}">
+              <div class="seq-model"><img data-seq="" src="{{content.image}}" alt="website template image" ></div>
+              <div class="seq-title" >
+                <span *ngIf="content.title_top" data-seq="" >{{content.title_top}}</span>
+                <h2 data-seq="">{{content.title}}</h2>
+                <p *ngIf="content.description" ata-seq="" >{{content.description}}</p>
+                <a *ngIf="content.button" data-seq="" href="{{content.button.href}}" class="aa-shop-now-btn aa-secondary-btn" >SHOP NOW</a>
+            </div>
+            </li>
+          </ul>
+        </div>
+        <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+          <a (click)="prev()" class="seq-prev" aria-label="Previous">
+              <span class="fa fa-angle-left"></span>
+            </a>
+          <a (click)="next()" class="seq-next" aria-label="Next">
+              <span class="fa fa-angle-right"></span>
+            </a>
+        </fieldset>
+      </div>
+    </div>
+  </section>

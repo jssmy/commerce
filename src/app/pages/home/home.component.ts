@@ -9,7 +9,13 @@ import { ProductService } from 'src/app/shared/commons/services/product.service'
 })
 export class HomeComponent implements OnInit {
   products: IproductItem[];
-  imgs =  ['https://dynamic-yield.linio.com//api/scripts/8767678/images/31b1064934bbb__bb_2_onsite_samsung.jpg','https://dynamic-yield.linio.com//api/scripts/8767678/images/31b1064934bbb__bb_2_onsite_samsung.jpg'];
+  imgs: string[] =[
+    'assets/img/slider/1.jpg',
+    'assets/img/slider/2.jpg',
+    'assets/img/slider/3.jpg',
+    'assets/img/slider/4.jpg',
+    'assets/img/slider/5.jpg',
+  ];
   constructor(
     private productService: ProductService
   ) { }
@@ -19,7 +25,6 @@ export class HomeComponent implements OnInit {
       this.products = response;
     });
   }
-
 
   
 }

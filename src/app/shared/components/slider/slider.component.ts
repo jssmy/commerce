@@ -1,6 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-
+import { Islider } from '../../commons/interfaces/islider';
+import { zip } from 'rxjs';
+enum SLIDER_STATE {
+  ACTIVE = 'seq-in',
+  INACTIVE = 'seq-out'
+}
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -8,55 +13,47 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class SliderComponent implements OnInit {
   @Input ('imgs') imgs: string[];
+  sliderContent: Islider[] = [];
   @Input('timer') transition: string;
-  imag: any[] = [];
-  sizeul : number;
-  sizeli: number;
-  animation: string;
-  time:number ;
-  sliderc: string;
-   sliderl; string;
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.sizeul = 100 * this.imgs.length;
-    this.sizeli = 100 / this.imgs.length;
-    this.time = parseInt(this.transition) * this.imgs.length;
-    
-    let sct: string;
-    let lt: string;
-    let porcentaje: number = 0;
-    lt = '@keyframes carouselM { '
-     for( let x = 0 ; x <= 100; x = x + this.sizeli){
-       if(porcentaje == this.sizeul || porcentaje == 0){
-         if(porcentaje != 100){
-           lt += x - 5 +"% {left: -"+(porcentaje-100)+"%;} ";
-         }
-         porcentaje = 0;
-         lt += x +"% {left: "+porcentaje+"%;} ";
-         porcentaje += 100;
-       }else{
-         lt += x - 5 +"% {left: -"+(porcentaje-100)+"%;} ";
-         lt += x +"% {left: -"+porcentaje+"%;} ";
-         porcentaje += 100;
-       }
-     }
-     lt += ' };';
-
-      let hd= document.getElementsByTagName('head')[0];
-      let cr = document.createElement("style");
-      let tx = document.createTextNode(lt);
-      cr.appendChild(tx);
-      hd.appendChild(cr);
-
-      this.sliderc = this.sizeul.toString() + '%';
-      this.animation = "carouselM "+ this.time+"s infinite";
-      this.sliderl = this.sizeli.toString() + '%';
-  
-      this.sliderl = this.sizeli.toString() + '%';
-      this.imgs.forEach(e => {
-        this.imag.push(this.sanitizer.bypassSecurityTrustStyle(`url(${e}')`))
+    let index = 0;
+    for(const item of this.imgs) {
+      index++;
+      this.sliderContent.push({
+        title: `SAVE UP TO 75% OFFJEANS COLLECTION X ${index}`,
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, illum.',
+        image: item,
+        state: SLIDER_STATE.INACTIVE,
+        button: {
+          text: 'SHOW NOW',
+          href: "#"
+        }
       });
+    }
+    this.sliderContent[0].state = SLIDER_STATE.ACTIVE;
+  }
+
+  next() {
+    const current_slide = this.sliderContent.find( x => x.state === SLIDER_STATE.ACTIVE);
+    let current_index = this.sliderContent.indexOf(current_slide);
+    const max: number = this.sliderContent.length - 1; 
+    let next = current_index + 1;
+    console.log(current_slide, current_index, next, max);
+    if(current_index === max) next = 0;
+    current_slide.state = SLIDER_STATE.INACTIVE;
+    this.sliderContent[next].state = SLIDER_STATE.ACTIVE;
+  }
+
+  prev(){
+    const current_slide = this.sliderContent.find( x => x.state === SLIDER_STATE.ACTIVE);
+    let current_index = this.sliderContent.indexOf(current_slide);
+    const min: number = 0; 
+    let next = current_index - 1;
+    if(current_index <= min) next = this.sliderContent.length - 1;
+    current_slide.state = SLIDER_STATE.INACTIVE;
+    this.sliderContent[next].state = SLIDER_STATE.ACTIVE;
   }
 
 }
