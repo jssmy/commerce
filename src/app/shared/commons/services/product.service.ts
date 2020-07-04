@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map, } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { IproductResponseItem } from '../interfaces/iproduct-response-item';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,55 +12,19 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
   
-  get(): Observable<IproductItem[]>{
-    const products: IproductItem [] = [
-      {
-        id: '324343434',
-        name: 'Harina Blanca Flor Preparada - Bolsa 1Kg',
-        price: 12.3,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-13.png'
-      },
-      {
-        id: '324343434',
-        name: 'Harina Blanca Flor Preparada - Bolsa 1Kg',
-        price: 12.3,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-6.png'
-      },
-      {
-        id: '324343434',
-        name: 'Harina Blanca Flor Preparada - Bolsa 1Kg',
-        price: 12.3,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-4.png'
-      },
-      {
-        id: '324343434',
-        name: 'Harina Blanca Flor Preparada - Bolsa 1Kg',
-        price: 12.3,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-4.png'
-      },
-      {
-        id: '324343434',
-        name: 'Harina Blanca Flor Preparada - Bolsa 1Kg',
-        price: 12.3,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-2.png'
-      },
-      {
-        id: '324343434',
-        name: 'Harina Blanca Flor Preparada - Bolsa 1Kg',
-        price: 12.3,
-        price_before: 0,
-        url_img: 'assets/img/man/polo-shirt-5.png'
-      }
-    ];
-    return new Observable((x) => x.next(products));
-    return this.http.get(environment.URL_PRODUCT_SERVICE).pipe(map(response => {
-      console.log(response);
-      return [];
+  get(): Observable<IproductItem[]>{    
+    return this.http.get<IproductResponseItem[]>(environment.URL_PRODUCT_SERVICE).pipe(map(response  => {
+      const products: IproductItem[] = response.map((item: IproductResponseItem) => {
+        return {
+          slug: item.slug,
+          title: item.title,
+          description: item.description,
+          price: item.pricing.price,
+          categories: item.categories,
+          images: item.images
+        };
+      });
+      return products;
     }));
   }
 }

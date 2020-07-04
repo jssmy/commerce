@@ -1,7 +1,11 @@
+import { IImage, ICategory } from './iproduct-response-item';
+
 export interface IproductItem {
-    id: string;
-    name: string;
+    id?: string;
+    slug: string;
+    title: string;
+    description: string;
     price: number; // current price (with disccount)
-    price_before: number;  // original price // without disccount
-    url_img: string
+    images: IImage[];
+    categories: ICategory[];
 }

@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/shared/commons/services/product.service'
 })
 export class HomeComponent implements OnInit {
   products: IproductItem[];
-
+  imgs =  ['https://dynamic-yield.linio.com//api/scripts/8767678/images/31b1064934bbb__bb_2_onsite_samsung.jpg','https://dynamic-yield.linio.com//api/scripts/8767678/images/31b1064934bbb__bb_2_onsite_samsung.jpg'];
   constructor(
     private productService: ProductService
   ) { }
