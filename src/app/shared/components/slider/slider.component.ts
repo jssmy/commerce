@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Islider } from '../../commons/interfaces/islider';
-import { zip } from 'rxjs';
 enum SLIDER_STATE {
   ACTIVE = 'seq-in',
   INACTIVE = 'seq-out'
@@ -14,10 +13,15 @@ enum SLIDER_STATE {
 export class SliderComponent implements OnInit {
   @Input ('imgs') imgs: string[];
   sliderContent: Islider[] = [];
-  @Input('timer') transition: string;
+  @Input('timer') transition: number;
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+    this.default();
+    this.moving();
+  }
+
+  default() {
     let index = 0;
     for(const item of this.imgs) {
       index++;
@@ -35,12 +39,17 @@ export class SliderComponent implements OnInit {
     this.sliderContent[0].state = SLIDER_STATE.ACTIVE;
   }
 
+  moving() {
+    setInterval(() => {
+      this.next();
+    }, this.transition * 1000);
+  }
+
   next() {
     const current_slide = this.sliderContent.find( x => x.state === SLIDER_STATE.ACTIVE);
     let current_index = this.sliderContent.indexOf(current_slide);
     const max: number = this.sliderContent.length - 1; 
     let next = current_index + 1;
-    console.log(current_slide, current_index, next, max);
     if(current_index === max) next = 0;
     current_slide.state = SLIDER_STATE.INACTIVE;
     this.sliderContent[next].state = SLIDER_STATE.ACTIVE;
@@ -54,6 +63,8 @@ export class SliderComponent implements OnInit {
     if(current_index <= min) next = this.sliderContent.length - 1;
     current_slide.state = SLIDER_STATE.INACTIVE;
     this.sliderContent[next].state = SLIDER_STATE.ACTIVE;
+  
+  
   }
 
 }
