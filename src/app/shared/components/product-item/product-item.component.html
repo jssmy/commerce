@@ -1,7 +1,7 @@
 <figure>
     <div class="aa-product">
         <div  class="aa-product-img">
-            <img    src="{{product.url_img}}" alt="website template image">
+            <img    src="{{product.images[0].image_source.medium_src}}" alt="website template image">
         </div>
         <div class="card-options">
             <i class="fa fa-heart card-icon" aria-hidden="true"></i>
@@ -10,7 +10,7 @@
     </div>
     <figcaption class="aa-product-info">
         <div class="aa-product-detail">
-            <h4 class="aa-product-title"><a href="#">{{product.name}}</a></h4>
+            <h4 class="aa-product-title"><a href="#">{{product.title}}</a></h4>
         <span class="aa-product-price">S/{{product.price}}</span>
         </div>
         <div class="aa-customer-ifo pull-left">
