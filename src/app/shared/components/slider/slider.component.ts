@@ -17,6 +17,7 @@ export class SliderComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
+    this.transition =  this.transition ? this.transition : 3;
     this.default();
     this.moving();
   }
@@ -59,10 +60,10 @@ export class SliderComponent implements OnInit {
     const current_slide = this.sliderContent.find( x => x.state === SLIDER_STATE.ACTIVE);
     let current_index = this.sliderContent.indexOf(current_slide);
     const min: number = 0; 
-    let next = current_index - 1;
-    if(current_index <= min) next = this.sliderContent.length - 1;
+    let prev = current_index - 1;
+    if(current_index <= min) prev = this.sliderContent.length - 1;
     current_slide.state = SLIDER_STATE.INACTIVE;
-    this.sliderContent[next].state = SLIDER_STATE.ACTIVE;
+    this.sliderContent[prev].state = SLIDER_STATE.ACTIVE;
   
   
   }

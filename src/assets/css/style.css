@@ -14,7 +14,7 @@ body {
   flex-direction: column;
 }
 .aa-product-detail {
-  height: 70%;
+  /*height: 70%;*/
 }
 
 .aa-customer-ifo a{
@@ -45,6 +45,7 @@ body {
 }
 
 .aa-product {
+  display: flex;
   padding: 10px;
   position: relative;
   height: 65%;
@@ -1125,11 +1126,12 @@ img {
 
 }
 .aa-product-catg li {
-  display: block;
+  display: flex;
   float: left;
-  height: 380px;
+  height: 320px; 
   text-align: center;
   margin: 0 0 20px 55px;
+  width: 100%;
   width: 20.5%;
   position: relative;
   overflow: hidden;
@@ -1145,7 +1147,7 @@ img {
   */
 }
 .aa-product-catg li figure .aa-product-img img {
-  max-width: 80%;
+  max-width: 65%;
 }
 /*
 .aa-product-catg li:hover figure .aa-product-img {
@@ -1174,7 +1176,9 @@ img {
   /*height: 300px;*/
 }
 .aa-product-catg li figure .aa-product-img {
-  display: block;
+  /*display: block;*/
+  display: flex;
+  justify-content: center;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
@@ -1264,6 +1268,8 @@ img {
 }
 .aa-product-catg li .aa-sale {
   background-color: #008000;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 .aa-product-catg li .aa-sold-out {
   background-color: #FF0000;
@@ -3809,6 +3815,7 @@ img {
     padding: 8px 10px;
   }
 }
+/********480************/
 @media (max-width: 480px) {
   #aa-slider .aa-slider-area .seq-title {
     left: 2%;
@@ -3838,8 +3845,13 @@ img {
   }
 
   .aa-product-catg li {
-    margin-left: 0;
+    /*margin-left: 0;
     width: 100%;
+    */
+    width: 45%;
+    height: 46%;
+    margin-left: 5px;
+    margin-right: 10px;
   }
 
   .slick-prev {
@@ -3976,7 +3988,21 @@ img {
   .aa-blog-details #respond input[type="text"], .aa-blog-details #respond input[type="email"], .aa-blog-details #respond input[type="url"] {
     width: 100%;
   }
+  .aa-product-catg li .aa-product-title a,
+  .aa-product-catg li .aa-product-price {
+    font-size: 14px;
+  }
+  .aa-customer-ifo a {
+    font-size: 11px;
+  }
+  .aa-product-catg li .aa-product-title {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
 }
+/*****end 480********/
+
+
 @media (max-width: 360px) {
   #aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo {
     margin-bottom: 10px;
