@@ -104,6 +104,36 @@ export class ProductService {
       slug: 'product-en-venta-12',
       title: 'Polos de hombres'
     },
+    {
+      categories: [{ category: 'phone' }],
+      description: 'Product description',
+      images: [{
+        image_source: {
+          large_src: 'assets/img/man/polo-shirt-13.png',
+          small_src: 'assets/img/man/polo-shirt-13.png',
+          medium_src: 'assets/img/man/polo-shirt-13.png'
+        },
+        title: 'default_img',
+      }],
+      price: 12,
+      slug: 'product-en-venta-12',
+      title: 'Polos de hombres'
+    },
+    {
+      categories: [{ category: 'phone' }],
+      description: 'Product description',
+      images: [{
+        image_source: {
+          large_src: 'assets/img/man/polo-shirt-13.png',
+          small_src: 'assets/img/man/polo-shirt-13.png',
+          medium_src: 'assets/img/man/polo-shirt-13.png'
+        },
+        title: 'default_img',
+      }],
+      price: 12,
+      slug: 'product-en-venta-12',
+      title: 'Polos de hombres'
+    },
   ];
 
   return new Observable((x) => x.next(products) );

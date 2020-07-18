@@ -9,3 +9,7 @@ export interface IproductItem {
     images: IImage[];
     categories: ICategory[];
 }
+
+export interface ISliderProductItem extends IproductItem {
+    state: string;
+}

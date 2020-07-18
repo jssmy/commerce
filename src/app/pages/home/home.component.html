@@ -1,9 +1,11 @@
 <div class="main-content">
-  <app-slider [imgs]="imgs"></app-slider>
   <app-grid></app-grid>
   <section class="home" id="aa-product">
       <div class="container">
         <div class="row">
+          <div class="col-md-12">
+            <h2 class="section-title">Recomendado para ti <a href="#">Ver más...</a></h2>
+          </div>
           <div class="col-md-12">
             <div class="row">
               <div class="aa-product-area">
@@ -17,7 +19,6 @@
                               </li>
                           </ng-container>
                       </ul>
-                      <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-long-arrow-right"></span></a>
                   </div>
                   </div>
                 </div>
@@ -28,4 +29,11 @@
       </div>
     </section>
     <app-banner></app-banner>
+    <section id="aa-popular-category">
+      <div class="container">
+        <div class="aa-popular-category-area">
+          <app-slider-product-item title="Lo último en tecnología" [products]="products"></app-slider-product-item>
+        </div>
+      </div>
+    </section>
 </div>

@@ -1,3 +1,30 @@
 .card-options i{
     margin-bottom: 10px;
 }
+.card-options button {
+    padding: 0px;
+    height: 24px;
+    width: 24px;
+    border-radius: 15px;
+    line-height: 0px;
+    margin-bottom: 10px;
+}
+
+.card-options button > .glyphicon {
+    line-height: 0px;
+    margin: 0px;
+    right: .5px;
+}
+
+@media (max-width: 480px) {
+    .card-options button {
+        display: none;
+    }
+}
+.card-options button:focus {
+    outline: none;
+}
+
+.card-options button i{
+    padding: 0px;
+}
