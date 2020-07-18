@@ -1,0 +1,22 @@
+<div class="slider-product-content">
+    <h2 class="section-title">{{title}} <a href="#">Ver más...</a></h2>
+    <div class="row">
+        <ul class="aa-product-catg aa-popular-slider slick-initialized slick-slider">
+            <button type="button" 
+            (click)="prev()"
+            class="slick-prev slick-arrow {{BUTTON.PREV.state}}">Previous</button>
+            <button type="button"
+            (click)="next()"
+            class="slick-next slick-arrow {{BUTTON.NEXT.state}}" >Next</button>
+            <div aria-live="polite" class="slick-list draggable">
+                <div class="slick-track" [ngStyle]="styleList">
+                    <ng-container *ngFor="let product of sliderContent">
+                        <li class="product-cart slick-slide {{product.state}}">
+                            <app-product-item [product]="product"></app-product-item>
+                        </li>
+                    </ng-container>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>
