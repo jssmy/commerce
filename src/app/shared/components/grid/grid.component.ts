@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Igrid } from '../../commons/interfaces/igrid';
+import { Igrid, IStyleGrid } from '../../commons/interfaces/igrid';
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-grid',
@@ -22,27 +23,47 @@ export class GridComponent implements OnInit {
       {
         href: '#',
         title: 'Nuevas tiendas se unieron',
-        image: 'assets/img/grid/1.jpg'
+        image: 'assets/img/grid/5.jpg',
+        style: {
+          background: '#fdfdfdab',
+          color: '#333333'
+        }
       },
       {
         href: null,
-        title: 'Tiendas comerciales',
-        image: 'assets/img/grid/2.jpg'
+        title: 'Todo en moda para él y ella',
+        image: 'assets/img/grid/18.jpg',
+        style: {
+          background: '#fdfdfdab',
+          color: '#333333'
+        }
       },
       {
         href: null,
-        title: 'Tiendas comerciales',
-        image: 'assets/img/grid/3.jpg'
+        title: 'Belleza y cosméticos',
+        image: 'assets/img/grid/13.jpg',
+        style: {
+          background: '#fdfdfdab',
+          color: '#333333'
+        }
       },
       {
         href: null,
-        title: 'Tiendas comerciales',
-        image: 'assets/img/grid/1.jpg'
+        title: 'Calzados de hommbres',
+        image: 'assets/img/grid/1.jpg',
+        style: {
+          background: '#fdfdfdab',
+          color: '#333333'
+        }
       },
       {
         href: null,
-        title: 'Tiendas comerciales',
-        image: 'assets/img/grid/2.jpg'
+        title: 'Calzados para damas',
+        image: 'assets/img/grid/2.jpg',
+        style: {
+          background: '#fdfdfdab',
+          color: '#333333'
+        }
       }
     ];
     this.gridLeft.push(this.gridConent[0])
