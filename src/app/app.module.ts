@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { APP_ROUTES } from './app-routing.module';
+// import { APP_ROUTES } from './app-routing.module';
 import { LayoutModule } from './pages/layout/layout.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    APP_ROUTES,
+    // APP_ROUTES,
+    AppRoutingModule,
     LayoutModule,
     HttpClientModule
   ],

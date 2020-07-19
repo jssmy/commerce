@@ -7,8 +7,8 @@
               <div class="col-md-5 no-padding">
                 <div class="aa-promo-left">
                   <div class="aa-promo-banner"><img src="{{gridConent[0].image}}" alt="website template image">
-                    <div class="aa-prom-content">
-                      <h4><a href="">{{gridLeft[0].title}}</a></h4>
+                    <div [ngStyle]="gridConent[0].style" class="aa-prom-content">
+                      <h4 *ngIf="gridConent[0].title"><a href="">{{gridLeft[0].title}}</a></h4>
                     </div>
                   </div>
                 </div>
@@ -16,8 +16,9 @@
               <div class="col-md-7 no-padding">
                 <div class="aa-promo-right">
                   <div *ngFor="let grid of gridRigth" class="aa-single-promo-right">
-                    <div class="aa-promo-banner"><img src="{{grid.image}}" alt="website template image">
-                      <div class="aa-prom-content"><span>Exclusive Item</span>
+                    <div class="aa-promo-banner">
+                      <img src="{{grid.image}}" alt="website template image">
+                      <div [ngStyle]="grid.style" class="aa-prom-content">
                         <h4><a href="https://www.free-css.com/free-css-templates">{{grid.title}}</a></h4>
                       </div>
                     </div>

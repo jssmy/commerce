@@ -959,6 +959,8 @@ img {
   -ms-transform: translateZ(0);
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  display: flex;
+  justify-content: center;
 }
 #aa-promo .aa-promo-area .aa-promo-banner:before {
   content: "";
@@ -1004,9 +1006,9 @@ img {
 }
 #aa-promo .aa-promo-area .aa-promo-banner .aa-prom-content {
   position: absolute;
-  left: 0;
+  /*left: 0;*/
   top: 35%;
-  right: 0;
+  /*right: 0;*/
   width: 100%;
   text-align: center;
   z-index: 99;
@@ -1016,13 +1018,16 @@ img {
   padding: 5px 10px;  
 }
 #aa-promo .aa-promo-area .aa-promo-banner .aa-prom-content h4 {
-  color: #fff;
   font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
 }
+#aa-promo .aa-promo-area .aa-promo-right .aa-promo-banner .aa-prom-content h4 {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 #aa-promo .aa-promo-area .aa-promo-banner .aa-prom-content h4 a {
-  color: #fff !important;
   text-decoration: none;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -3941,6 +3946,9 @@ img {
   }
 
   #aa-promo .aa-promo-area .aa-promo-banner .aa-prom-content h4 {
+    font-size: 15px;
+  }
+  #aa-promo .aa-promo-area .aa-promo-right .aa-promo-banner .aa-prom-content h4 {
     font-size: 15px;
   }
 

@@ -15,7 +15,7 @@ import { SliderProductItemModule } from 'src/app/shared/components/slider-produc
   declarations: [HomeComponent],
   imports: [
     CommonModule,
-    ProductItemModule,
+    ProductItemModule.forRoot(),
     BannerModule,
     GridModule,
     SliderModule,
