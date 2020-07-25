@@ -8,8 +8,14 @@ export interface IproductItem {
     price: number; // current price (with disccount)
     images: IImage[];
     categories: ICategory[];
+    store: IStore
 }
 
 export interface ISliderProductItem extends IproductItem {
     state: string;
+}
+
+interface IStore {
+    name: string;
+    href: string;
 }

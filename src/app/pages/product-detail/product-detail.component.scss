@@ -1,0 +1,25 @@
+.shopping-information {
+    min-height: 100px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.shopping-information .title{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px;
+    color: #000000;
+    margin: 0px;
+    margin-bottom: 5px;
+}
+
+.shopping-information .store a{
+    font-size: 15px;
+    color: #7D4E38;
+    text-decoration: underline;
+}
+.shopping-information .store i{
+    font-size: 20px;
+    color: #7D4E38;
+    margin-left: 5px;
+}
