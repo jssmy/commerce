@@ -18,9 +18,9 @@ export interface IManufactureDetail {
 
 export interface IShippingDetail {
     weight: number;
-    width:  number;
+    width: number;
     height: number;
-    depth:  number;
+    depth: number;
 }
 
 export interface IPricing {
