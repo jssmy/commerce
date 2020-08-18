@@ -8,7 +8,7 @@ export interface IproductItem {
     price: number; // current price (with disccount)
     images: IImage[];
     categories: ICategory[];
-    store: IStore
+    store: IStore;
 }
 
 export interface ISliderProductItem extends IproductItem {

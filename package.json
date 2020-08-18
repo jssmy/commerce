@@ -11,7 +11,9 @@
     "dev:ssr": "ng run pay:serve-ssr",
     "serve:ssr": "node dist/pay/server/main.js",
     "build:ssr": "ng build --prod && ng run pay:server:production",
-    "prerender": "ng run pay:prerender"
+    "prerender": "ng run pay:prerender",
+    "start:heroku": "node dist/server",
+    "postinstall": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
