@@ -59,6 +59,7 @@ export class SliderProductItemComponent implements OnInit {
           slug: item.slug,
           state: '',
           title: item.title,
+          store: null
         }
         sliderItem.state = actives <= this.maxItem ? 'slick-active' : '';
         actives++;
