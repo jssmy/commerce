@@ -12,14 +12,13 @@ import { CProductItems } from '../constants/product-item.constants';
 export class ProductService {
 
   constructor(private http: HttpClient) { }
-  
-  get(): Observable<IproductItem[]>{    
+
+  get(): Observable<IproductItem[]>{
     const products: IproductItem[] = CProductItems;
 
-  return new Observable((x) => x.next(products) );
-  
+    return new Observable((x) => x.next(products) );
     return this.http.get<IproductResponseItem[]>(environment.URL_PRODUCT_SERVICE).pipe(map(response  => {
-      const products: IproductItem[] = response.map((item: IproductResponseItem) => {
+      const iproducts: IproductItem[] = response.map((item: IproductResponseItem) => {
         return {
           slug: item.slug,
           title: item.title,
@@ -30,7 +29,7 @@ export class ProductService {
           store: null
         };
       });
-      return products;
+      return iproducts;
     }));
   }
 

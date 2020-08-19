@@ -8,15 +8,15 @@
                 <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
             </button>
             <button class="btn">
-                <i class="icon-add_shopping_cart " aria-hidden="true"></i>
+                <i class="glyphicon glyphicon-comment" aria-hidden="true"></i>
             </button>
         </div>
     </div>
     <figcaption class="aa-product-info">
         <div class="aa-product-detail">
-            
+
             <h4 class="aa-product-title">
-                <a [routerLink]="[ '/producto', product.slug ]">{{product.title}}</a>
+                <a [routerLink]="[ '/producto', product.slug ]">{{product.title | uppercase }}</a>
             </h4>
         <span class="aa-product-price">S/{{product.price}}</span>
         </div>
