@@ -14,9 +14,6 @@ body {
   flex-direction: column;
   margin-top: 60px;
 }
-.aa-product-detail {
-  /*height: 70%;*/
-}
 
 .aa-customer-ifo a{
   font-size: 12px;
@@ -37,7 +34,7 @@ body {
   padding-left: 4px;
   padding-bottom: 3px;
   color: #927d7d;
-  background-color: #fff; 
+  background-color: #fff;
   cursor: pointer;
 }
 
@@ -59,6 +56,7 @@ body {
   padding: 10px;
   position: relative;
   height: 65%;
+  justify-content: center;
 }
 .aa-product .card-options{
   position: absolute;
@@ -180,7 +178,7 @@ img {
   margin-right: 5px;
 }
 
-.aa-filter-btn {  
+.aa-filter-btn {
   color: #fff;
   font-size: 15px;
   height: 30px;
@@ -405,7 +403,7 @@ img {
   font-family: "Raleway", sans-serif;
   font-size: 28px;
 }
-#aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a:hover {  
+#aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a:hover {
   color: #333;
 }
 #aa-header .aa-header-bottom .aa-header-bottom-area .aa-logo a > span {
@@ -687,7 +685,7 @@ img {
   padding: 8px 15px;
 }
 #menu .menu-area .navbar-default .navbar-nav .dropdown-menu li a:hover, #menu .menu-area .navbar-default .navbar-nav .dropdown-menu li a:focus {
-  color: #fff; 
+  color: #fff;
 }
 #menu .menu-area .navbar-default .navbar-nav .dropdown-menu .dropdown-header {
   color: #555;
@@ -854,7 +852,7 @@ img {
   text-align: center;
 }
 #aa-slider .aa-slider-area .seq-title span {
-  background-color: #fff;  
+  background-color: #fff;
   display: inline-block;
   padding: 6px 15px;
   text-transform: uppercase;
@@ -890,7 +888,7 @@ img {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-#aa-slider .aa-slider-area .seq .seq-next:hover, #aa-slider .aa-slider-area .seq .seq-next:focus {  
+#aa-slider .aa-slider-area .seq .seq-next:hover, #aa-slider .aa-slider-area .seq .seq-next:focus {
   border: 1px solid #f9f9f9;
   color: #fff;
 }
@@ -1015,7 +1013,7 @@ img {
 }
 #aa-promo .aa-promo-area .aa-promo-banner .aa-prom-content span {
   background-color: #FFF;
-  padding: 5px 10px;  
+  padding: 5px 10px;
 }
 #aa-promo .aa-promo-area .aa-promo-banner .aa-prom-content h4 {
   font-size: 30px;
@@ -1152,7 +1150,7 @@ img {
 .aa-product-catg li {
   display: flex;
   float: left;
-  height: 320px; 
+  height: 320px;
   text-align: center;
   margin: 0 0 20px 55px;
   width: 100%;
@@ -1171,7 +1169,7 @@ img {
   */
 }
 .aa-product-catg li figure .aa-product-img img {
-  max-width: 65%;
+  max-width: 70%;
 }
 /*
 .aa-product-catg li:hover figure .aa-product-img {
@@ -1238,6 +1236,7 @@ img {
 .aa-product-catg li .aa-product-title {
   color: #333;
   margin-bottom: 5px;
+  min-height: 40px;
 }
 .aa-product-catg li .aa-product-title a {
   font-size: 14px;
@@ -1873,11 +1872,15 @@ img {
   display: inline;
   float: left;
   width: 100%;
+  margin-top: 30px;
 }
 #aa-product-category .aa-sidebar .aa-sidebar-widget {
   display: inline;
   float: left;
   width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #ffffff;
   /* category */
   /* tags */
   /* price range  */
@@ -2002,8 +2005,7 @@ img {
 #aa-product-category .aa-sidebar .aa-sidebar-widget .aa-recently-views ul li .aa-cartbox-img {
   display: block;
   float: left;
-  height: 95px;
-  width: 100px;
+  width: 50px;
 }
 #aa-product-category .aa-sidebar .aa-sidebar-widget .aa-recently-views ul li .aa-cartbox-img img {
   width: 100%;
@@ -2040,10 +2042,10 @@ img {
   width: 100%;
 }
 #aa-product-category .aa-product-catg-content .aa-product-catg-head {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   display: inline;
   float: left;
-  padding: 10px 15px;
+  padding: 18px 15px;
   width: 100%;
 }
 #aa-product-category .aa-product-catg-content .aa-product-catg-head .aa-product-catg-head-left {
@@ -2512,7 +2514,7 @@ img {
   padding: 20px 15px;
 }
 #checkout .checkout-area .checkout-left .panel-group .panel-default .panel-heading .panel-title a {
-  display: block; 
+  display: block;
 }
 #checkout .checkout-area .checkout-left .panel-group .aa-checkout-coupon .aa-coupon-code {
   border: 1px solid #e5e5e5;
@@ -3344,7 +3346,7 @@ img {
   float: left;
   width: 100% !important;
 }
-#aa-contact .aa-contact-area .aa-contact-address .aa-contact-address-left .comments-form button { 
+#aa-contact .aa-contact-area .aa-contact-address .aa-contact-address-left .comments-form button {
   width: 100px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -4319,7 +4321,7 @@ img {
     padding: 6px;
     width: 90px;
   }
-  #aa-header .aa-header-top .aa-header-top-right .aa-head-top-nav-right li a {   
+  #aa-header .aa-header-top .aa-header-top-right .aa-head-top-nav-right li a {
     padding: 5px 2px;
   }
 }

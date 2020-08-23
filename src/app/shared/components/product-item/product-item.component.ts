@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ProductItemComponent implements OnInit {
   @Input() product: IproductItem;
-  
+
   constructor(
     private router: Router
   ) { }
@@ -18,7 +18,7 @@ export class ProductItemComponent implements OnInit {
 
   deatail(event){
     event.preventDefault();
-    this.router.navigate(['producto',this.product.slug]);
+    this.router.navigate(['producto', this.product.slug]);
   }
 
 }
