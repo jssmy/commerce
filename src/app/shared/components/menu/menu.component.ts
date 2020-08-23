@@ -12,11 +12,12 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  
+
   menus: IMenu[] = [];
-  
+
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
+    // tslint:disable-next-line: ban-types
+    @Inject(PLATFORM_ID) private platformId: object,
     private service: MenuService
   ) { }
 
@@ -29,7 +30,7 @@ export class MenuComponent implements OnInit {
   private getMenu() {
     if (!CookieHelper.get(Helper.cookie.menu)) {
       this.menus = this.service.get();
-      CookieHelper.set(Helper.cookie.menu,JSON.stringify(this.menus));
+      CookieHelper.set(Helper.cookie.menu, JSON.stringify(this.menus));
     }
     this.menus = JSON.parse(CookieHelper.get(Helper.cookie.menu));
   }

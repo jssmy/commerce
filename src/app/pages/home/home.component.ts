@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { IproductItem } from 'src/app/shared/commons/interfaces/iproduct-item';
 import { ProductService } from 'src/app/shared/commons/services/product.service';
-
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,13 +18,16 @@ export class HomeComponent implements OnInit {
     'assets/img/slider/5.jpg',
   ];
   constructor(
-    private productService: ProductService
+    private productService: ProductService,
+    @Inject(PLATFORM_ID) private platformId: object,
   ) { }
 
   ngOnInit(): void {
-    this.productService.get().subscribe(response => {
-      this.products = response;
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      this.productService.get().subscribe(response => {
+        this.products = response;
+      });
+    }
   }
 
 }

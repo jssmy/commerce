@@ -1872,11 +1872,15 @@ img {
   display: inline;
   float: left;
   width: 100%;
+  margin-top: 30px;
 }
 #aa-product-category .aa-sidebar .aa-sidebar-widget {
   display: inline;
   float: left;
   width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #ffffff;
   /* category */
   /* tags */
   /* price range  */
@@ -2001,8 +2005,7 @@ img {
 #aa-product-category .aa-sidebar .aa-sidebar-widget .aa-recently-views ul li .aa-cartbox-img {
   display: block;
   float: left;
-  height: 95px;
-  width: 100px;
+  width: 50px;
 }
 #aa-product-category .aa-sidebar .aa-sidebar-widget .aa-recently-views ul li .aa-cartbox-img img {
   width: 100%;
@@ -2039,10 +2042,10 @@ img {
   width: 100%;
 }
 #aa-product-category .aa-product-catg-content .aa-product-catg-head {
-  background-color: #f3f3f3;
+  background-color: #ffffff;
   display: inline;
   float: left;
-  padding: 10px 15px;
+  padding: 18px 15px;
   width: 100%;
 }
 #aa-product-category .aa-product-catg-content .aa-product-catg-head .aa-product-catg-head-left {

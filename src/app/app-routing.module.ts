@@ -14,6 +14,10 @@ const routes: Routes = [{
     {
       path: `${RoutesPath.PRODUCT_DETAIL}/:slug`,
       loadChildren: () => import('./pages/product-detail/product-detail.module').then(m => m.ProductDetailModule)
+    },
+    {
+      path: `${RoutesPath.PRODUCT_RESULTS}`,
+      loadChildren: () => import('./pages/search-result/search-result.module').then(m => m.SearchResultModule)
     }
   ]
 }];
