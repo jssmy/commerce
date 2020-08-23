@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/shared/commons/services/product.service'
 })
 export class HomeComponent implements OnInit {
   products: IproductItem[];
-  imgs: string[] =[
+  imgs: string[] = [
     'assets/img/slider/1.jpg',
     'assets/img/slider/2.jpg',
     'assets/img/slider/3.jpg',
@@ -26,5 +26,4 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  
 }

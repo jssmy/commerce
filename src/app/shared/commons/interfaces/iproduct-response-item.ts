@@ -28,12 +28,12 @@ export interface IPricing {
 }
 
 export interface ICategory {
+    id?: string;
     category: string;
 }
 
 export interface IImage {
-    image_source: IIMageSource;
-    title: string;
+    source: string;
 }
 
 export interface IIMageSource {

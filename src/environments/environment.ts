@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 export const environment = {
   production: false,
-  URL_PRODUCT_SERVICE: 'https://fir-api-92d68.web.app/api/v1/products'
-}
+  URL_PRODUCT_SERVICE: 'https://env-dev-product-service.herokuapp.com/api/product/recommended'
+};
 
 /*
  * For easier debugging in development mode, you can import the following file

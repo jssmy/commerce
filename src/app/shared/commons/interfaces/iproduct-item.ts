@@ -9,6 +9,8 @@ export interface IproductItem {
     images: IImage[];
     categories: ICategory[];
     store: IStore;
+    update: number;
+    created: number;
 }
 
 export interface ISliderProductItem extends IproductItem {
