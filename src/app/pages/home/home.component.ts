@@ -10,6 +10,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
   products: IproductItem[];
+  itemLoading: number[] = [];
   imgs: string[] = [
     'assets/img/slider/1.jpg',
     'assets/img/slider/2.jpg',
@@ -24,6 +25,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
+      for (let i = 0; i < 12; i++ ) {
+        this.itemLoading.push(i);
+      }
       this.productService.get().subscribe(response => {
         this.products = response;
       });

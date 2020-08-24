@@ -7,6 +7,7 @@ import { BannerModule } from 'src/app/shared/components/banner/banner.module';
 import { GridModule } from 'src/app/shared/components/grid/grid.module';
 import { SliderModule } from 'src/app/shared/components/slider/slider.module';
 import { SliderProductItemModule } from 'src/app/shared/components/slider-product-item/slider-product-item.module';
+import { LoadingContentModule } from 'src/app/shared/components/loading-content/loading-content.module';
 
 
 
@@ -20,8 +21,8 @@ import { SliderProductItemModule } from 'src/app/shared/components/slider-produc
     GridModule,
     SliderModule,
     SliderProductItemModule,
+    LoadingContentModule,
     HOME_ROUTES
   ], exports: [ HomeComponent ]
 })
-export class HomeModule { }
-  
+export class HomeModule {}

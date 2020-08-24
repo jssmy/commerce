@@ -13,13 +13,17 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   get(): Observable<IproductItem[]>{
-    return this.http.get<IproductItem[]>(environment.URL_PRODUCT_SERVICE).pipe(
+    return this.http.get<IproductItem[]>(environment.URL_PRODUCT_SERVICE_RECOMMED).pipe(
       map((response: IproductItem[])  => {
           return response;
       }));
   }
 
   find(slug: string): Observable<IproductItem> {
-    return new Observable(x => x.next());
+    return this.http.get<IproductItem>(`${environment.URL_PRODUCT_SERVICE_FIND}/${slug}`).pipe(
+      map((response: IproductItem) => {
+        return response;
+      })
+    );
   }
 }

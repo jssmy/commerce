@@ -1055,7 +1055,7 @@ img {
   width: 100%;
 }
 #aa-product .aa-product-area .aa-product-inner .aa-product-catg {
-  float: left;
+  /* float: left;*/
 }
 #aa-product .aa-product-area .aa-product-inner #men {
   text-align: center;
