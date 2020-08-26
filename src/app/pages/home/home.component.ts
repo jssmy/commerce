@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
       for (let i = 0; i < 12; i++ ) {
         this.itemLoading.push(i);
       }
-      this.productService.get().subscribe(response => {
+      this.productService.get(1).subscribe(response => {
         this.products = response;
       });
     }

@@ -9,6 +9,8 @@ import { ProductService } from 'src/app/shared/commons/services/product.service'
 })
 export class SearchResultComponent implements OnInit {
   products: IproductItem[];
+  paginate = 1;
+  loadMoreEnabled = true;
   constructor(
     private productService: ProductService
   ) { }
@@ -16,8 +18,22 @@ export class SearchResultComponent implements OnInit {
   ngOnInit(): void {
     this.loadResults();
   }
-  public async loadResults() {
-     this.products = await this.productService.get().toPromise();
+  async loadResults() {
+     this.products = await this.productService.get(this.paginate).toPromise();
   }
 
+  loadMore() {
+    if (this.loadMoreEnabled) {
+      this.paginate ++;
+      this.loadMoreEnabled = false;
+      this.productService.get(this.paginate).toPromise().then((response: IproductItem[]) => {
+        this.loadMoreEnabled = true;
+        this.products = [
+          ... this.products,
+          ... response
+        ];
+      });
+    }
+  }
 }
+

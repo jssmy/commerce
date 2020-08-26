@@ -1,0 +1,17 @@
+.aa-product-catg-loading {
+  width: 100%;
+  display: inline;
+  float: left;
+  padding-bottom: 10px;
+}
+
+.aa-product-catg-loading >  button {
+  width: 100%;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-color: white;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  outline: none;
+}

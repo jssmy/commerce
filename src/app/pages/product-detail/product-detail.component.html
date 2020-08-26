@@ -11,11 +11,16 @@
                   <div class="aa-product-view-slider">
                     <div id="demo-1" class="simpleLens-gallery-container">
                       <div class="simpleLens-container">
-                        <div class="simpleLens-big-image-container"><a data-lens-image="img/view-slider/large/polo-shirt-1.png" class="simpleLens-lens-image"><img src="img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image"><div class="simpleLens-mouse-cursor"></div></a></div>
+                        <div class="simpleLens-big-image-container">
+                          <a data-lens-image="img/view-slider/large/polo-shirt-1.png" class="simpleLens-lens-image">
+                          <img  src="{{product.images[0].source}}"class="simpleLens-big-image">
+                          <div class="simpleLens-mouse-cursor"></div>
+                        </a>
+                            </div>
                       </div>
                       <div class="simpleLens-thumbnails-container">
                           <a data-big-image="img/view-slider/medium/polo-shirt-1.png" data-lens-image="img/view-slider/large/polo-shirt-1.png" class="simpleLens-thumbnail-wrapper" href="#">
-                            <img src="img/view-slider/thumbnail/polo-shirt-1.png">
+                            <img src="{{product.images[0].source}}">
                           </a>
                       </div>
                     </div>
