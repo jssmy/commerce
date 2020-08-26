@@ -5,6 +5,7 @@ import { SEARCH_RESULT_ROUTES } from './search-result.routes';
 import { ProductItemModule } from 'src/app/shared/components/product-item/product-item.module';
 import { SiderModule } from 'src/app/shared/components/sider/sider.module';
 import { HeadCatalogModule } from 'src/app/shared/components/head-catalog/head-catalog.module';
+import { LoadingContentModule } from 'src/app/shared/components/loading-content/loading-content.module';
 
 
 
@@ -20,6 +21,7 @@ import { HeadCatalogModule } from 'src/app/shared/components/head-catalog/head-c
     ProductItemModule,
     SiderModule,
     HeadCatalogModule,
+    LoadingContentModule,
     SEARCH_RESULT_ROUTES
   ], exports: [
     SearchResultComponent

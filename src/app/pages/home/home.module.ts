@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { HOME_ROUTES } from './home.routes';
@@ -7,6 +7,8 @@ import { BannerModule } from 'src/app/shared/components/banner/banner.module';
 import { GridModule } from 'src/app/shared/components/grid/grid.module';
 import { SliderModule } from 'src/app/shared/components/slider/slider.module';
 import { SliderProductItemModule } from 'src/app/shared/components/slider-product-item/slider-product-item.module';
+import { LoadingContentModule } from 'src/app/shared/components/loading-content/loading-content.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -20,8 +22,16 @@ import { SliderProductItemModule } from 'src/app/shared/components/slider-produc
     GridModule,
     SliderModule,
     SliderProductItemModule,
+    LoadingContentModule,
+    RouterModule,
     HOME_ROUTES
   ], exports: [ HomeComponent ]
 })
-export class HomeModule { }
-  
+export class HomeModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: HomeModule,
+      providers: [],
+    };
+  }
+}
