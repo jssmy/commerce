@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map, } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Helper } from '../helpers/helper';
+import { DateHelper } from '../helpers/date-helper';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +17,24 @@ export class ProductService {
   get(paginate: number): Observable<IproductItem[]>{
     return this.http.get<IproductItem[]>(`${environment.URL_PRODUCT_SERVICE_RECOMMED}/${paginate}`).pipe(
       map((response: IproductItem[])  => {
-          return response;
+          return response.map((item: IproductItem) => {
+            return this.mapper(item);
+          });
       }));
   }
 
   find(slug: string): Observable<IproductItem> {
     return this.http.get<IproductItem>(`${environment.URL_PRODUCT_SERVICE_FIND}/${slug}`).pipe(
       map((response: IproductItem) => {
-        return response;
+        return this.mapper(response);
       })
     );
   }
+
+  private mapper(item: IproductItem) {
+  item.shortTitle = Helper.shortName(item.title);
+  item.createdDateHuman = DateHelper.dateAgoDays(item.created);
+  return item;
+  }
+
 }

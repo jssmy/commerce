@@ -1,0 +1,6 @@
+<div class="btn-icon-container">
+  <button  [ngStyle]="styled" class="btn btn-icon">
+    <i class="{{icon}}" aria-hidden="true"></i>
+  </button>
+  <span  [ngStyle]="styledText" *ngIf="text">{{text}}</span>
+</div>

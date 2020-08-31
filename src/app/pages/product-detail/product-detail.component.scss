@@ -1,3 +1,4 @@
+@import './../../../scss/variables';
 .shopping-information {
     min-height: 100px;
     background-color: #ffffff;
@@ -23,3 +24,46 @@
     color: #7D4E38;
     margin-left: 5px;
 }
+
+.aa-product-view-content > .aa-product-title{
+  display: flex;
+  padding-bottom: 15px;
+  h3 {
+    margin: 0px;
+    margin-left: 15px;
+    letter-spacing: 0.5px;
+  }
+
+}
+
+.aa-product-details-content > .row > div:last-of-type {
+  background-color: #ffffff;
+  .aa-product-view-content {
+    padding: 30px
+  }
+}
+.aa-price-block {
+  padding-bottom: 15px;
+  span {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 30px;
+  color: #ea2840
+  }
+}
+
+.aa-product-view-content > p {
+  text-align: justify;
+}
+
+.aa-prod-view-bottom > div.row  {
+  padding: 20px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.aa-prod-view-bottom > span.pull-right, .aa-prod-view-bottom > span.pull-left {
+    color: $secundary-span;
+    font-size: 13px;
+    padding-bottom: 20px;
+  }

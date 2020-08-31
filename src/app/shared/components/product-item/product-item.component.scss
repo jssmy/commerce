@@ -1,36 +1,14 @@
-
-.card-options i{
-    margin-bottom: 10px;
-}
-.card-options button {
-    padding: 0px;
-    height: 35px;
-    width: 35px;
-    border-radius: 25px;
-    line-height: 0px;
-    margin-bottom: 15px;
-    font-size: 20px;
-    border-color: #e0e0e0;
-}
-
-.card-options button > .glyphicon {
-    line-height: 0px;
-    margin: 0px;
-    right: .5px;
-}
-
-@media (max-width: 480px) {
+:host {
+  @media (max-width: 480px) {
     .card-options button {
         display: none;
     }
 }
-.card-options button:focus {
-    outline: none;
-}
-
-.card-options button i{
-    padding: 0px;
-}
 .aa-product-img {
     cursor: pointer;
+}
+
+  app-button-icon {
+    padding-bottom: 10px;
+  }
 }

@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductItemComponent } from './product-item.component';
 import { RouterModule } from '@angular/router';
+import { ButtonIconModule } from '../button-icon/button-icon.module';
 
 
 
@@ -9,7 +10,8 @@ import { RouterModule } from '@angular/router';
   declarations: [ProductItemComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ButtonIconModule
   ], exports: [ ProductItemComponent ]
 })
 export class ProductItemModule {
