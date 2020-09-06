@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { IproductItem, ISliderProductItem } from '../../commons/interfaces/iproduct-item';
 import { tick } from '@angular/core/testing';
 import { DateHelper } from '../../commons/helpers/date-helper';
+import { Helper } from '../../commons/helpers/helper';
 const SLIDER_BUTTON = {
   NEXT:  {
     state: ''
@@ -54,6 +55,7 @@ export class SliderProductItemComponent implements OnInit {
     for (let i = 0 ; i < maxContent; i++) {
         const item = this.products[i];
         const sliderItem: ISliderProductItem = {
+          shortTitle: item.shortTitle,
           categories: item.categories,
           description: item.description,
           images: item.images,
@@ -62,6 +64,7 @@ export class SliderProductItemComponent implements OnInit {
           state: '',
           title: item.title,
           store: null,
+          createdDateHuman: DateHelper.unixToHumanDate(DateHelper.current().getTime()),
           created: DateHelper.current().getTime(),
           update: DateHelper.current().getTime()
         };

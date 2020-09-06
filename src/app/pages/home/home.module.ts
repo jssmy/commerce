@@ -9,6 +9,7 @@ import { SliderModule } from 'src/app/shared/components/slider/slider.module';
 import { SliderProductItemModule } from 'src/app/shared/components/slider-product-item/slider-product-item.module';
 import { LoadingContentModule } from 'src/app/shared/components/loading-content/loading-content.module';
 import { RouterModule } from '@angular/router';
+import { CategoriesModule } from 'src/app/shared/components/categories/categories.module';
 
 
 
@@ -24,6 +25,7 @@ import { RouterModule } from '@angular/router';
     SliderProductItemModule,
     LoadingContentModule,
     RouterModule,
+    CategoriesModule,
     HOME_ROUTES
   ], exports: [ HomeComponent ]
 })

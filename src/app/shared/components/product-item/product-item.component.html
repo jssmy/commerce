@@ -4,19 +4,15 @@
             <img    src="{{product.images[0].source}}" alt="website template image">
         </div>
         <div class="card-options">
-            <button class="btn">
-                <i class="glyphicon glyphicon-heart" aria-hidden="true"></i>
-            </button>
-            <button class="btn">
-                <i class="glyphicon glyphicon-comment" aria-hidden="true"></i>
-            </button>
+            <app-button-icon></app-button-icon>
+            <app-button-icon [icon]='icon.glyphicon.comment'></app-button-icon>
         </div>
     </div>
     <figcaption class="aa-product-info">
         <div class="aa-product-detail">
 
             <h4 class="aa-product-title">
-                <a [routerLink]="[ '/producto', product.slug ]">{{product.title | uppercase }}</a>
+                <a [routerLink]="[ '/produ  cto', product.slug ]">{{product.shortTitle | uppercase }}</a>
             </h4>
         <span class="aa-product-price">S/{{product.price}}</span>
         </div>
