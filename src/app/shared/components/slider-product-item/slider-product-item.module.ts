@@ -10,7 +10,7 @@ import { ProductItemModule } from '../product-item/product-item.module';
   imports: [
     CommonModule,
     ProductItemModule
-  ], exports: [ 
+  ], exports: [
     SliderProductItemComponent
   ]
 })

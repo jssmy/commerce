@@ -6,4 +6,5 @@ export interface IButtonStyle {
   height ?: string;
   width ?: string;
   'font-weight' ?: string;
+  'border-radius'?: string;
 }
