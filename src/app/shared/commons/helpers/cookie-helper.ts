@@ -9,7 +9,7 @@ export class CookieHelper {
         return true;
       }
 
-    public static get(key: string): any {
+    public static get(key: string): string {
         const name = key + '=';
         const ca = document.cookie.split(';');
         for (let c of ca) {
@@ -20,7 +20,7 @@ export class CookieHelper {
                 return c.substring(name.length, c.length);
             }
         }
-        return false;
+        return null;
     }
 
     public static delete(key: string): boolean {
@@ -34,4 +34,14 @@ export class CookieHelper {
     public static check(key: string): boolean {
       return !! this.get(key);
     }
+
+   public static removeAll(): boolean {
+      const cookies = document.cookie.split(';');
+      for (const cookie of cookies) {
+          const eqPos = cookie.indexOf('=');
+          const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+          document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+      }
+      return true;
+  }
 }

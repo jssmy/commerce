@@ -3,10 +3,10 @@
       <div class="row">
         <div class="aa-header-bottom-area">
           <div class="col-md-2 col-xs-12 col-sm-3 col-lg-2"></div>
-          <div class="col-md-7 col-xs-12 col-sm-6 col-lg-7">
+          <div class="col-md-7 col-xs-12 col-sm-6 col-lg-7 search-content">
             <app-input  leftIcon="ti-search" placeholder="Encuentra lo que necesitas"></app-input>
           </div>
-          <div class="col-md-3 col-xs-12 col-sm-3 col-lg-3">
+          <div class="col-md-3 col-xs-12 col-sm-3 col-lg-3 menu-options">
             <div class="aa-header-button-box">
               <a class="nav-menu" href="#">
                 <i class="ti-menu fa-2x"></i>
@@ -18,21 +18,27 @@
                 <div class="dropdown-content">
                   <a href="#"><i class="ti-user"></i> Mi cuenta</a>
                   <a href="#"><i class="ti-gift"></i> Mis pedidos</a>
-                  <a [routerLink]="['/login']" ><i class="fa fa-sign-in"></i> Iniciar sesión</a>
-
+                  <a *ngIf="!authCheck" [routerLink]="['/login']" ><i class="fa fa-sign-in"></i> Iniciar sesión</a>
+                  <a *ngIf="authCheck"  (click)="logOut($event)" href="#" ><i class="fa fa fa-sign-out"></i> Cerrar sesión</a>
                 </div>
               </div>
-              <a href="#">
-                <i class="ti-heart fa-2x"></i>
-                <span>9</span>
-              </a>
-              <a href="#">
-                <i class="ti-comment fa-2x"></i>
-                <span>9</span>
-              </a>
-              <a href="#">
-                <i class="ti-shopping-cart fa-2x"></i>
-              </a>
+              <div class="dropdown">
+                <a href="#">
+                  <i class="ti-heart fa-2x"></i>
+                  <span>9</span>
+                </a>
+              </div>
+              <div class="dropdown">
+                <a href="#">
+                  <i class="ti-comment fa-2x"></i>
+                  <span>9</span>
+                </a>
+              </div>
+              <div class="dropdown">
+                <a href="#">
+                  <i class="ti-shopping-cart fa-2x"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>

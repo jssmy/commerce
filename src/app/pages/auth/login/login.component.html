@@ -1,22 +1,47 @@
 <section class="login-section" style="background-image: url('assets/img/config/background-shopping.png');">
-  <div class="form-login">
-    <div class="form-group">
-      <app-input fontWeight="600" leftIcon="ti-user" height="50px" borderRadius="30px" placeholder="Correo electrónico"></app-input>
-    </div>
-    <div class="form-group">
-      <app-input  fontWeight="600" leftIcon="ti-lock" height="50px" borderRadius="30px"  type="password" placeholder="Contraseña"></app-input>
-    </div>
-    <div class="form-group btn-login">
-      <button class="btn">Entrar</button>
-    </div>
-    <div class="form-group social">
-      <div class="row">
-        <label>Entrar con</label>
+
+    <form [formGroup]="presenter.form" class="form-login">
+      <div class="form-group">
+        <app-input
+          id="input-login-email"
+          style="color: #150202"
+          fontWeight="600"
+          leftIcon="ti-user"
+          height="50px"
+          borderRadius="30px"
+          formControlName="email"
+          name="email"
+          [errors]="presenter.email.errors | controlError:presenter.errorControls.emailCotrolError:presenter.email.touched"
+          placeholder="Correo electrónico">
+        </app-input>
       </div>
-      <div class="row">
-        <button class="btn google"><i class="ti-google"> </i></button>
-        <button class="btn facebook"><i class="ti-facebook"></i></button>
+      <div class="form-group">
+        <app-input
+          id="input-login-password"
+          style="color: #150202"
+          fontWeight="600"
+          leftIcon="ti-lock"
+          height="50px"
+          borderRadius="30px"
+          formControlName="password"
+          name="password"
+          type="password"
+          [errors]="presenter.password.errors | controlError:presenter.errorControls.passwordCotrolError:presenter.password.touched"
+          placeholder="Contraseña">
+        </app-input>
       </div>
-    </div>
-  </div>
+      <div class="form-group btn-login">
+        <button (click)="sendLogin()" class="btn">Entrar</button>
+      </div>
+      <div class="form-group social">
+        <div class="row">
+          <label>Entrar con</label>
+        </div>
+        <div class="row">
+          <button class="btn google"><i class="ti-google"> </i></button>
+          <button class="btn facebook"><i class="ti-facebook"></i></button>
+        </div>
+      </div>
+    </form>
+
 </section>

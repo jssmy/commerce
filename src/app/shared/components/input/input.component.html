@@ -1,5 +1,17 @@
 <div [ngStyle]="styleFormGroup" class="aa-search-box">
-  <i *ngIf="leftIcon" class="{{leftIcon}}"></i>
-  <input [ngStyle]="styleInput" class="app-input" type="{{type}}" name="{{name}}" id="{{id}}" placeholder="{{placeholder}}">
-  <i *ngIf="rightIcon" class="rightIcon"></i>
+      <i *ngIf="leftIcon" class="{{leftIcon}}"></i>
+      <input
+      (blur)="onTouch()"
+      (input)="onInput($event.target.value)"
+      [ngStyle]="styleInput"
+      class="app-input"
+      type="{{type}}"
+      name="{{name}}"
+      id="{{id}}"
+      [value]="value"
+      [disabled]="isDisabled"
+      placeholder="{{placeholder}}">
+      <i *ngIf="rightIcon" class="rightIcon"></i>
 </div>
+<label *ngIf="errors">{{errors}}</label>
+

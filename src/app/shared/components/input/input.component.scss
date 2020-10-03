@@ -1,4 +1,7 @@
 :host {
+  .form-group-input {
+    color: #555;
+  }
   .aa-search-box {
     padding-left: 10px;
     padding-right: 10px;
@@ -29,6 +32,19 @@
     color: #9b9b9b;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 20px;
+    color: inherit;
+    font-size: .9em;
   }
 
 }

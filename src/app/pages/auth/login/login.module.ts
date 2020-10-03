@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { LOGIN_ROUTES } from './login.routes';
 import { InputModule } from 'src/app/shared/components/input/input.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ControlErrorModule } from 'src/app/shared/commons/pipe/control-error/control-error.module';
 
 
 
@@ -14,6 +16,9 @@ import { InputModule } from 'src/app/shared/components/input/input.module';
   imports: [
     CommonModule,
     InputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ControlErrorModule,
     LOGIN_ROUTES
   ], exports: [LoginComponent]
 })
