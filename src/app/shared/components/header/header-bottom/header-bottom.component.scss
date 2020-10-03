@@ -1,19 +1,90 @@
-
 .aa-header-button-box {
-    padding-top: 4px;
+  padding-top: 10px;
 }
-.aa-header-button-box a {
-    padding-top: 10px;
+.aa-header-bottom-area {
+  min-height: 60px;
+  height: 60px;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  min-width: 300px;
+  margin-top: 15px;
+}
+.dropdown-content:after {
+    content: "";
+    display: block;
+    height: 0;
+    border-top: 5px solid #f9f9f9;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-bottom: 0 solid #dddddd;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 101;
+    transition: 0.2s 0.2s border-top ease-out, 0.3s border-top-color
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black !important;
+  text-decoration: none;
+  display: block;
+  padding: 20px !important;
+}
+
+.dropdown-content a > i {
+  margin-right: 10px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover {
+  // background-color: #f1f1f1;
+  border-bottom-style: solid;
+  border-bottom-color: white;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.aa-header-button-box a , .aa-header-button-box .dropdown a {
+    // padding-top: 10px;
     padding-right: 10px;
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
     padding-left: 10px;
     position: relative;
     color: #ffffff;
 }
 
-.aa-header-button-box a:first-of-type {
-    padding-left: 0px;
-}
+
 .aa-header-button-box a  span{
     position: absolute;
     text-align: center;
@@ -36,17 +107,30 @@
     display: none;
 }
 
+
+.aa-header-bottom > .container  > .row > .aa-header-bottom-area > .search-content {
+  padding: 10px;
+  height: 100%;
+}
+
+.aa-header-bottom > .container  > .row > .aa-header-bottom-area > .menu-options ,
+.aa-header-bottom > .container  > .row > .aa-header-bottom-area > .menu-options > .aa-header-button-box,
+.aa-header-bottom > .container  > .row > .aa-header-bottom-area > .menu-options > .aa-header-button-box > a,
+.aa-header-bottom > .container  > .row > .aa-header-bottom-area > .menu-options > .aa-header-button-box > div {
+  height: 100%;
+}
+
 @media (max-width: 480px) {
     .aa-header-button-box
     .nav-menu {
         display: inline;
-    }   
+    }
 }
 @media (max-width: 640px) {
     .aa-header-button-box
     .nav-menu {
         display: inline;
-    }   
+    }
 }
 
 @media only screen and (min-width: 640px) {

@@ -7,8 +7,6 @@ import { IMenu } from '../interfaces/imenu';
 export class MenuService {
 
   constructor() { }
-  
-  /** get all menu application*/
   public get(): IMenu[] {
     return [{
       label: 'Inicio',
