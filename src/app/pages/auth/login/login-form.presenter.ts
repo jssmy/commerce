@@ -25,5 +25,9 @@ export class LoginFormPresenter {
       Validators.required
     ]);
   }
+
+  public setInvalidCredentials() {
+    this.password.setErrors({icorrectCredential: true});
+  }
 }
 
