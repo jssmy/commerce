@@ -5,8 +5,7 @@ import { LOGIN_ROUTES } from './login.routes';
 import { InputModule } from 'src/app/shared/components/input/input.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ControlErrorModule } from 'src/app/shared/commons/pipe/control-error/control-error.module';
-
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   schemas: [
@@ -19,7 +18,8 @@ import { ControlErrorModule } from 'src/app/shared/commons/pipe/control-error/co
     FormsModule,
     ReactiveFormsModule,
     ControlErrorModule,
-    LOGIN_ROUTES
+    LOGIN_ROUTES,
+    NgxSpinnerModule
   ], exports: [LoginComponent]
 })
 export class LoginModule { }

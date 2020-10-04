@@ -1,4 +1,5 @@
-import { Buffer } from 'buffer';
+import * as e from 'express';
+// import { Buffer } from 'safe-buffer';
 import { CookieHelper } from '../shared/commons/helpers/cookie-helper';
 import { IAuthUser } from '../shared/commons/interfaces/auth/iauth-user';
 import { ILoginResponse } from '../shared/commons/interfaces/auth/login-response';
@@ -22,7 +23,7 @@ export class Auth {
 
   private static autorization(): IAutorization {
     const encode: ILoginResponse        = JSON.parse(CookieHelper.get(this.userToken));
-    const autorization                  = Buffer.from(encode.autorization, 'base64').toString('utf-8');
+    const autorization                  = atob(encode.autorization);
     const au: IAutorization             = JSON.parse(autorization);
     return au;
   }
