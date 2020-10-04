@@ -6,6 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { LoaderService } from './shared/commons/interceptors/loader.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RequestService } from './shared/commons/interceptors/request.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoaderService,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestService,
       multi: true
     }
   ],
