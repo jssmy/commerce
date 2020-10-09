@@ -16,6 +16,13 @@
                   <i class="ti-user fa-2x"></i>
                 </a>
                 <div class="dropdown-content">
+                  <div *ngIf="authCheck" class="profile-image">
+                    <img src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png">
+                    <div class="user-information">
+                      <p class="user-say">Hola,</p>
+                      <p class="user-name">{{auth.name + ' ' + auth.lastName}}</p>
+                    </div>
+                  </div>
                   <a href="#"><i class="ti-user"></i> Mi cuenta</a>
                   <a href="#"><i class="ti-gift"></i> Mis pedidos</a>
                   <a *ngIf="!authCheck" [routerLink]="['/login']" ><i class="fa fa-sign-in"></i> Iniciar sesión</a>
