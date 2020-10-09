@@ -13,19 +13,25 @@ import { IAuthUser } from 'src/app/shared/commons/interfaces/auth/iauth-user';
 })
 export class HeaderBottomComponent implements OnInit {
   authCheck: boolean = Auth.check();
+  auth: IAuthUser;
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    if (Auth.check()) {
+      this.auth = Auth.user();
+    }
   }
 
   logOut(event) {
     event.preventDefault();
-    this.authService.logout();
-    CookieHelper.removeAll();
-    this.router.navigate([RoutesPath.MAIN]);
+    this.authService.logout().toPromise().finally(() => {
+      CookieHelper.removeAll();
+      window.location.reload();
+    });
+
   }
 
 }

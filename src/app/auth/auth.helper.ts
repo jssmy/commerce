@@ -1,13 +1,7 @@
-import * as e from 'express';
-// import { Buffer } from 'safe-buffer';
 import { CookieHelper } from '../shared/commons/helpers/cookie-helper';
 import { IAuthUser } from '../shared/commons/interfaces/auth/iauth-user';
+import { OAuth } from '../shared/commons/interfaces/auth/ioauth';
 import { ILoginResponse } from '../shared/commons/interfaces/auth/login-response';
-interface IAutorization {
-  user: IAuthUser;
-  accessToken: string;
-  expiresIn: number;
-}
 export class Auth {
   private static userToken = 'provider';
   /**
@@ -21,19 +15,23 @@ export class Auth {
     CookieHelper.set(this.userToken, JSON.stringify(autorization));
   }
 
-  private static autorization(): IAutorization {
-    const encode: ILoginResponse        = JSON.parse(CookieHelper.get(this.userToken));
-    const autorization                  = atob(encode.autorization);
-    const au: IAutorization             = JSON.parse(autorization);
-    return au;
+  private static autorization(): OAuth {
+    const auth: OAuth        = JSON.parse(CookieHelper.get(this.userToken));
+    return auth;
   }
 
   public static user(): IAuthUser {
-    return this.autorization().user;
+    const meta = atob(this.autorization().meta_data);
+    const user: IAuthUser = JSON.parse(meta);
+    return user;
   }
 
   public static token(): string {
-    return this.autorization().accessToken;
+    return this.autorization().access_token;
+  }
+
+  public static refreshToken(): string {
+    return this.autorization().refresh_token;
   }
 
 }
