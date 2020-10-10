@@ -30,6 +30,7 @@
     "@angular/router": "~9.1.9",
     "@nguniversal/express-engine": "^9.1.1",
     "@types/node": "^14.11.2",
+    "angularx-social-login": "^3.2.2",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
     "moment": "^2.29.0",

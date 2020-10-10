@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoaderService } from './shared/commons/interceptors/loader.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RequestService } from './shared/commons/interceptors/request.service';
+import { FacebookLoginProvider, GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RequestService } from './shared/commons/interceptors/request.service';
     AppRoutingModule,
     LayoutModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SocialLoginModule
   ],
   providers: [
     {
@@ -29,6 +31,22 @@ import { RequestService } from './shared/commons/interceptors/request.service';
       provide: HTTP_INTERCEPTORS,
       useClass: RequestService,
       multi: true
+    },
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('1055878359447-d20b484bqgabcvnronf45c1kqf1vkji4.apps.googleusercontent.com'),
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('812388019564306'),
+          }
+        ],
+      } as SocialAuthServiceConfig,
     }
   ],
   bootstrap: [AppComponent]
