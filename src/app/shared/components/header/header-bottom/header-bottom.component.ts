@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SocialAuthService } from 'angularx-social-login';
 import { Auth } from 'src/app/auth/auth.helper';
 import { AuthService } from 'src/app/auth/auth.service';
 import { RoutesPath } from 'src/app/shared/commons/constants/routes-path.enum';
@@ -16,19 +17,21 @@ export class HeaderBottomComponent implements OnInit {
   auth: IAuthUser;
   constructor(
     private authService: AuthService,
-    private router: Router
+    private socialAuthService: SocialAuthService,
   ) { }
 
   ngOnInit(): void {
     if (Auth.check()) {
       this.auth = Auth.user();
+      console.log(this.auth);
     }
   }
 
-  logOut(event) {
+  async logOut(event) {
     event.preventDefault();
-    this.authService.logout().toPromise().finally(() => {
+    this.authService.logout().toPromise().finally(async () => {
       CookieHelper.removeAll();
+      await this.socialAuthService.signOut();
       window.location.reload();
     });
 

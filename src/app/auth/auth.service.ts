@@ -52,10 +52,7 @@ export class AuthService {
   }
 
   private getParamsProviderSocial(request: IAuthRequest) {
-    return {
-      provider: request.provider,
-      user: request.user
-    };
+    return request.user;
   }
 
   logout(): Observable<ILogoutResponse> {

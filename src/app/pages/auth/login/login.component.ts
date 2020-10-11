@@ -32,29 +32,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.loginSocial();
+    //
   }
 
   private isValidForm() {
     return this.presenter.form.valid;
-  }
-
-  loginSocial() {
-    this.authStateSubscription = this.authService.authState.subscribe((user: SocialUser) => {
-      const request: IAuthRequest = {
-        grantType: GrantType.accessSocialProvider,
-        accessToken: user.authToken,
-        idToken: user.idToken,
-        provider: user.provider.toLocaleLowerCase(),
-        user: {
-            id: user.id,
-            email: user.email,
-            name: user.firstName,
-            lastName: user.lastName
-        }
-      };
-      this.login(request);
-    });
   }
 
   private login(request: IAuthRequest) {
@@ -82,12 +64,34 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
   }
 
+  private getRequesLoginSocial(user: SocialUser): IAuthRequest {
+    const request: IAuthRequest = {
+      grantType: GrantType.accessSocialProvider,
+      accessToken: user.authToken,
+      idToken: user.idToken,
+      user: {
+          email: user.email,
+          name: user.firstName,
+          lastName: user.lastName,
+          accounInformation: {
+            coverImage: null,
+            profileImage: user.photoUrl,
+            provider: user.provider.toLocaleLowerCase(),
+            id: user.id,
+          }
+      }
+    };
+    return  request;
+  }
+
   async signInWithGoogle() {
-    await this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    const social: SocialUser = await this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.login(this.getRequesLoginSocial(social));
   }
 
   async signInWithFB() {
-    await this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+   const social: SocialUser = await this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+   this.login(this.getRequesLoginSocial(social));
   }
 
   async signOut() {

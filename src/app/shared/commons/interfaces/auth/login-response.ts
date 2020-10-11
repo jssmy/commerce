@@ -19,6 +19,5 @@ export interface IAuthRequest {
   password?: string;
   accessToken?: string;
   idToken?: string;
-  provider?: string;
   user?: IAuthUser;
 }
