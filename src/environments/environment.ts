@@ -1,13 +1,24 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
+
+import { IEnvironment } from "./model/environment-model";
+
 // The list of file replacements can be found in `angular.json`.
-export const environment = {
+export const environment: IEnvironment = {
   production: false,
-  URL_PRODUCT_SERVICE_RECOMMED: 'https://env-dev-product-service.herokuapp.com/api/product/recommended',
-  URL_PRODUCT_SERVICE_FIND: 'https://env-dev-product-service.herokuapp.com/api/product/find',
-  URL_AUTH_LOGIN: 'https://server-user-management.herokuapp.com/api/auth/user',
-  URL_AUTH_LOGOUT: 'https://server-user-management.herokuapp.com/api/logout/user'
+  environmentProducts: {
+    baseUrl: 'https://env-dev-product-service.herokuapp.com',
+    serviceFindProduct: 'api/product/find',
+    serviceRecommended: 'api/product/recommended'
+  },
+  environmentAuth:  {
+    baseUrl: 'https://server-user-management.herokuapp.com',
+    serviceLogin: 'api/auth/user',
+    serviceLogout: 'api/logout/user',
+    serviceRegister: 'api/create/user'
+  }
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

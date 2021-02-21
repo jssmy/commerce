@@ -19,7 +19,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     ReactiveFormsModule,
     ControlErrorModule,
     LOGIN_ROUTES,
-    NgxSpinnerModule
-  ], exports: [LoginComponent]
+  ], exports: [
+    LoginComponent
+  ]
 })
 export class LoginModule { }

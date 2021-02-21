@@ -1,7 +1,16 @@
-export const environment = {
+import { IEnvironment } from "./model/environment-model";
+
+export const environment: IEnvironment = {
   production: true,
-  URL_PRODUCT_SERVICE_RECOMMED: 'https://env-dev-product-service.herokuapp.com/api/product/recommended',
-  URL_PRODUCT_SERVICE_FIND: 'https://env-dev-product-service.herokuapp.com/api/product/find',
-  URL_AUTH_LOGIN: 'https://server-user-management.herokuapp.com/api/auth/user',
-  URL_AUTH_LOGOUT: 'https://server-user-management.herokuapp.com//api/logout/user'
+  environmentProducts: {
+    baseUrl: 'https://env-dev-product-service.herokuapp.com',
+    serviceFindProduct: 'api/product/find',
+    serviceRecommended: 'api/product/recommended'
+  },
+  environmentAuth:  {
+    baseUrl: 'https://server-user-management.herokuapp.com',
+    serviceLogin: 'api/auth/user',
+    serviceLogout: 'api/logout/user',
+    serviceRegister: 'api/create/user'
+  }
 };

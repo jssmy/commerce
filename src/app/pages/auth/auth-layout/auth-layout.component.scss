@@ -1,0 +1,121 @@
+:host {
+
+.login-section {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  flex-direction: column;
+}
+
+.login-section::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(116deg, #795f5496, #d1d1d1de);
+  background: -webkit-linear-gradient(116deg, #795f5496, #d1d1d1de);
+  background: -o-linear-gradient(116deg, #795f5496, #d1d1d1de);
+  background: -moz-linear-gradient(116deg, #795f5496, #d1d1d1de);
+  background: linear-gradient(116deg, #795f5496, #d1d1d1de);
+  opacity: 0.9;
+}
+
+
+.btn-login {
+  margin-top: 20px;
+}
+
+.social  {
+  margin-top: 10px;
+}
+
+.social > .row {
+  font-weight: normal;
+  display: flex;
+  flex-direction: row;
+  margin: 0px;
+  label {
+    color: white;
+    padding-left: 20px;
+    font-weight: normal;
+    font-size: 14px;
+  }
+}
+.social {
+  width: 100%;
+  max-width: 500px;
+}
+.social > .row > .btn{
+  width: 50%;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  outline: none;
+}
+
+.social > .row > .google{
+  background: #d22c21;
+  margin-right: 10px
+}
+
+.social > .row > .facebook{
+  background: #2271b3;
+}
+
+.social {
+  padding: 10px;
+}
+
+.label-auth {
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.label-auth > div {
+  width: 50%;
+  text-align: center;
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+  font-size: 15px;
+}
+
+.label-auth-active {
+  color: #555 !important;
+}
+
+.label-login, .label-register, .label-register > label, .label-login > label {
+  cursor: pointer;
+}
+
+
+.ng-star-inserted {
+      height: 500px im !important;
+  }
+
+
+}
