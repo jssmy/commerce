@@ -15,7 +15,7 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   get(paginate: number): Observable<IproductItem[]>{
-    return this.http.get<IproductItem[]>(`${environment.URL_PRODUCT_SERVICE_RECOMMED}/${paginate}`).pipe(
+    return this.http.get<IproductItem[]>(`${environment.environmentProducts.baseUrl}/${environment.environmentProducts.serviceRecommended}/${paginate}`).pipe(
       map((response: IproductItem[])  => {
           return response.map((item: IproductItem) => {
             return this.mapper(item);
@@ -24,7 +24,7 @@ export class ProductService {
   }
 
   find(slug: string): Observable<IproductItem> {
-    return this.http.get<IproductItem>(`${environment.URL_PRODUCT_SERVICE_FIND}/${slug}`).pipe(
+    return this.http.get<IproductItem>(`${environment.environmentProducts.baseUrl}/${environment.environmentProducts.serviceFindProduct}/${slug}`).pipe(
       map((response: IproductItem) => {
         return this.mapper(response);
       })

@@ -6,7 +6,6 @@ import { Auth } from 'src/app/auth/auth.helper';
 import { AuthService } from 'src/app/auth/auth.service';
 import { GrantType } from 'src/app/shared/commons/constants/grant-type';
 import { RoutesPath } from 'src/app/shared/commons/constants/routes-path.enum';
-import { SocialProvider } from 'src/app/shared/commons/constants/social-provider';
 import { IAuthRequest } from 'src/app/shared/commons/interfaces/auth/login-response';
 import { LoginFormPresenter } from './login-form.presenter';
 

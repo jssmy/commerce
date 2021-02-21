@@ -25,7 +25,7 @@
                   </div>
                   <a href="#"><i class="ti-user"></i> Mi cuenta</a>
                   <a href="#"><i class="ti-gift"></i> Mis pedidos</a>
-                  <a *ngIf="!authCheck" [routerLink]="['/login']" ><i class="fa fa-sign-in"></i> Iniciar sesión</a>
+                  <a *ngIf="!authCheck" [routerLink]="['/auth']" ><i class="fa fa-sign-in"></i> Iniciar sesión</a>
                   <a *ngIf="authCheck"  (click)="logOut($event)" href="#" ><i class="fa fa fa-sign-out"></i> Cerrar sesión</a>
                 </div>
               </div>

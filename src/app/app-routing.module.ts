@@ -2,14 +2,26 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { LoginGuardService } from './auth/login-guard.service';
+import { AuthLayoutComponent } from './pages/auth/auth-layout/auth-layout.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { RoutesPath } from './shared/commons/constants/routes-path.enum';
 
 const routes: Routes = [
   {
-    path: RoutesPath.LOGIN,
+    path: RoutesPath.AUTH,
     canActivate: [LoginGuardService],
-    loadChildren: () => import('./pages/auth/login/login.module').then(m => m.LoginModule)
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: RoutesPath.MAIN,
+        loadChildren: () =>  import('./pages/auth/login/login.module').then(m => m.LoginModule)
+      },
+      {
+        path: RoutesPath.REGISTER,
+        loadChildren: () => import('./pages/auth/register/register.module').then(m => m.RegisterModule)
+      }
+    ]
+
   }, {
   path: '',
   component: LayoutComponent,

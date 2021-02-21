@@ -1,0 +1,21 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="square-jelly-box"> <p style="font-size: 20px; color: white">Cargando...</p> </ngx-spinner>
+<section class="login-section" style="background-image: url('assets/img/config/background-shopping.png');">
+  <div class="label-auth">
+    <div  class="label-login {{ classLabelLogin }}">
+      <label (click)="redirectToLogin()">INICIAR SESIÓN</label>
+    </div>
+    <div class="label-register {{ classLabelRegister }}">
+      <label (click)="redirectToRegister()">CREAR CUENTA</label>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <div class="form-group social">
+    <div class="row">
+      <label>O entrar con</label>
+    </div>
+    <div class="row">
+      <button  class="btn google"><i class="ti-google"> </i></button>
+      <button  class="btn facebook"><i class="ti-facebook"></i></button>
+    </div>
+  </div>
+</section>
