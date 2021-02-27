@@ -7,7 +7,9 @@ export const ERROR_LOGIN = {
   },
   passwordCotrolError: {
     required: 'Ingrese contraseña',
-    icorrectCredential: 'Credenciales incorrectos'
+    icorrectCredential: 'Credenciales incorrectos',
+    pattern: 'La contraseña demasiado simple',
+    minlength: 'La contraseña debe ser mínimo 8 caracteres'
   },
   fullNameControllerError: {
     required: 'Ingrese nombres y apellidos'

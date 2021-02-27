@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RoutesPath } from 'src/app/shared/commons/constants/routes-path.enum';
 
 @Component({
@@ -12,13 +12,12 @@ export class AuthLayoutComponent implements OnInit {
   classLabelLogin = 'label-auth-active';
   classLabelRegister = '';
   constructor(
-    private router: Router
+    private router: Router,
+    private activeRouter: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-
   }
-
 
   public redirectToLogin(): void {
     this.classLabelLogin = 'label-auth-active';

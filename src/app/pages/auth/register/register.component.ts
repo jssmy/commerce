@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth/auth.service';
 import { RegisterFormPresenter } from './register-form.presenter';
 import { IAuthRegisterRequest } from './../../../shared/commons/interfaces/auth/iauth-register';
-import { IGenericError, IGenericSuccess } from 'src/app/shared/commons/interfaces/auth/igeneric-success';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
