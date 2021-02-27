@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ERROR_LOGIN } from "src/app/shared/commons/constants/error-login.constants";
+import { REGEX } from "src/app/shared/commons/constants/regex";
 
 @Injectable()
 export class RegisterFormPresenter {
@@ -26,7 +27,9 @@ export class RegisterFormPresenter {
       Validators.required
     ]);
     this.password.setValidators([
-      Validators.required
+      Validators.required,
+      Validators.minLength(8),
+      Validators.pattern(REGEX.password)
     ]);
     this.fullName.setValidators([
       Validators.required
